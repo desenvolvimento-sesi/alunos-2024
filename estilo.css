@@ -38,7 +38,6 @@ main {
 	justify-content: space-around;
 	padding: 50px;
 	flex-wrap: wrap;
-
 }
 
 h2 {text-align: center;}
@@ -59,7 +58,6 @@ h2 {text-align: center;}
 	width: 150px;
 	height: 150px;
 	margin-bottom: 20px;
-
 }
 .boxaluno figure img {
 	width: 100%;
@@ -74,12 +72,23 @@ h2 {text-align: center;}
 	font-size: 16px;
 	font-weight: 300;
 	height: 100px;
-
 }
 .boxaluno:hover {
 	box-shadow: 5px 5px 10px yellow;
-
 }
+.boxaluno::before{
+	content:'';
+	position: absolute;
+	display: none;
+	width: 12.5%;
+	height: 45%;
+	background-image: url(explosao.gif);
+	background-size: cover;
+}
+.boxaluno:hover::before{
+	display: block;
+}
+
 
 footer {
 	height: 50px;
