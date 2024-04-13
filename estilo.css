@@ -33,6 +33,103 @@ header h1, p {
 	text-shadow: 1px 1px 5px black;
 	margin-bottom: 10px;
 }
+
+.game-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5px 0;
+	gap:5px;
+}
+.game-container label{
+	color: #ED3237;
+	font-weight: 600;
+}
+.game-toggle{
+	appearance: none;
+	width: 30px;
+	aspect-ratio: 1/1;
+	border: 4px solid #ED3237;
+	border-radius: 100%;
+	overflow: hidden;
+}
+.game-toggle:hover:not(.game-toggle:checked), .game-toggle:focus:not(.game-toggle:checked){
+	animation: jump 0.5s infinite;
+	transform-origin: 50% 100%;
+}
+@keyframes jump {
+	0%{
+		scale: 1 1;}
+	10%{
+		scale: 1.5 0.5;}
+	25%{
+		scale: 1.5 0.5;
+		translate: 0 0;
+	}
+	50%{
+		scale: 0.5 1.5;
+		translate: 0 -10px;
+	}
+	75%{
+		scale: 1 1;
+		translate: 0 -12.5px;
+	}
+	100%{
+		scale: 0.9 1.1;
+	}
+
+}
+.game-toggle:checked{
+	transition: rotate 1s ease-out;
+	rotate: 180deg;
+}
+.game-toggle::after{
+	content:'';
+	width: 4px;
+	height: 200%;
+	background-color: #ED3237;
+	margin:auto;
+	rotate: -45deg;
+	transform-origin: 50% 50%;
+	margin-top: -50%;
+	opacity: 0;
+	transition: opacity 1s ease-out;
+}
+.game-toggle:checked::after{
+	display: block;
+	opacity: 1;
+}
+.game-container div{
+	height: 0;
+	min-width: 100%;
+	overflow:hidden;
+	background-color: darkslategray;
+	transition: height 1s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap:1rem;
+	margin: 0;
+}
+.game-container:has(.game-toggle:checked) div{
+	height: 500px;
+}
+.game-container div iframe{
+	width: 450px;
+	aspect-ratio: 1/1;
+	border: none;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+.game-container div p{
+	text-shadow: none;
+	color:#FFF;
+}
+.game-container div p a{
+	color: turquoise;
+}
+
 main {
 	display: flex;
 	justify-content: space-around;
