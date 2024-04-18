@@ -1,8 +1,19 @@
 /* DOCUMENTO CSS */
 
-* {
+*{
 	margin: 0;
 	padding: 0;
+}
+*:hover:not(body, html, header, footer, main){
+	animation: squash 0.25s 1;
+	animation-timing-function: ease-out;
+	transform-origin: 50% 50%;
+}
+@keyframes squash {
+	0%{scale: 1 1;}
+	25%{scale: 1.05 0.95;}
+	50%{scale: 0.95 1.05;}
+	100%{scale: 1 1;}
 }
 body {
 	font-family: 'Roboto', sans-serif;
@@ -129,7 +140,6 @@ header h1, p {
 .game-container div p a{
 	color: turquoise;
 }
-
 main {
 	display: flex;
 	justify-content: space-around;
