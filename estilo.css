@@ -189,15 +189,7 @@ h2 {text-align: center;}
 .boxaluno:hover {
 	box-shadow: 5px 5px 10px yellow;
 }
-.boxaluno::before{
-	content:'';
-	position: absolute;
-	display: none;
-	width: 12.5%;
-	height: 45%;
-	background-image: url(explosao.gif);
-	background-size: cover;
-}
+
 .boxaluno:hover::before{
 	display: block;
 }
